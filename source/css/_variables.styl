@@ -103,7 +103,9 @@ color-B10 = alpha(black, 0.1)
   --neut-L30: color-N30
   --neut-L10: color-N10
 
-  --banner-dim: alpha(#000, 0.2)
+  // --banner-dim: alpha(#000, 0.2)
+  --banner-dim: linear-gradient(to bottom, oklch(0.25 0.02 250), transparent);
+  --banner-matte: 0.85
 
   --primary-hue: get-config-or-default("hue", 0)
 
@@ -201,7 +203,8 @@ color-B10 = alpha(black, 0.1)
 :root[theme='light']
   --card-background: white
 
-  --banner-dim: none
+  --banner-dim: linear-gradient(to bottom, white, transparent);
+  --banner-matte: 1
 
   --neut-L90: color-B90
   --neut-L75: color-B75
