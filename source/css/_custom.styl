@@ -1,0 +1,70 @@
+
+@keyframes run1 {
+  0% {
+    transform: translateX(-102%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes run2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(102%);
+  }
+}
+
+#banner
+    // &.is_home
+    height 50vh !important
+    // @media mq-mobile
+    img 
+        z-index -50
+        position absolute
+        max-width: 1200px
+        margin-top: 86px
+        height: auto !important
+        transition: transform 0.5s ease-in-out
+        filter: brightness(var(--banner-matte))
+        // object-fit: fill !important
+        // object-position center
+        @media mq-mobile
+            margin-top: 84px
+            max-width: 840px
+            width: auto !important
+            height: auto !important
+            object-fit fill !important
+            object-position: center
+            // transform: 
+            &.anime_1
+                animation run1 20s infinite linear
+            &.anime_2
+                animation run2 20s infinite linear
+
+            // &.anime_1
+            // background-color  red
+            //   &.anime_2
+            //     animation run2 20s infinite linear
+            // zoom: 1.5
+    #banner-dim 
+        z-index -100
+
+#nav
+    // &.is_home
+    // height: calc(40vh - 72px) !important
+    height: 200px !important
+    z-index: 100
+    @media mq-mobile
+        height: 160px !important
+
+:root
+    &[showBanner="true"]
+        &[hasBanner="true"] 
+            #banner
+                display: flex;
+                justify-content: center;
+
+
