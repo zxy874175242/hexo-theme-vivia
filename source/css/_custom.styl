@@ -17,6 +17,17 @@
   }
 }
 
+@keyframes in_article {
+  0% {
+    transform: translateY(-10px);
+    opacity 0
+  }
+  100% {
+    transform: translateY(0);
+    opacity 1
+  }
+}
+
 #banner
     // &.is_home
     height 50vh !important
@@ -43,37 +54,40 @@
                 animation run1 20s infinite linear
             &.anime_2
                 animation run2 20s infinite linear
-
-            // &.anime_1
-            // background-color  red
-            //   &.anime_2
-            //     animation run2 20s infinite linear
-            // zoom: 1.5
+    
     #banner-dim 
         z-index -100
+:root
+    #banner
+    &[hasBanner="true"] //这个得和banner写一行才生效
+        #nav
+            height: 200px !important
+            z-index: 100
+            @media mq-mobile
+                height: 160px !important
 
-#nav
-    // &.is_home
-    // height: calc(40vh - 72px) !important
-    height: 200px !important
-    z-index: 100
-    @media mq-mobile
-        height: 160px !important
+:root
+    #banner
+    &[showBanner="true"]
+        &[hasBanner="desktop"] 
+            #nav
+                height: 200px !important
+                z-index: 100
+                @media mq-mobile
+                    height: 72px !important
+                
 
 :root
     #banner
         display: flex;
         justify-content: center;
-
-// .article
-//     transition: all 0.15s ease-in-out
-//     &:hover
-//         transform: scale(1.03)
-//         box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.1)
     
 .right-panel.with-pic
     &:hover 
         min-width: 38%
-        // filter: brightness(var(--banner-matte))
+
+        
+
+
 
 
